@@ -5,6 +5,14 @@ let off=0;
 let ans=0;
 let clients=0;
 
+const path = require('path');
+
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
 io.on('connection',(socket)=>{clients++;
     
 console.log('client connected',clients,ans,off)
